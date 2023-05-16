@@ -6,15 +6,15 @@
     apt:
       name: tree
       state: present
-  -  name: I want to install apache2
-     apt:
-     name: apache2
-     state: present
-  -  name: Install wget
-     apt:
-     name: wget
-     state: present
-  -  name: install nmap
-     apt:
-     name: nmap
-     state: present  
+  - name: I want to install apache2
+    apt:
+      name: apache2
+      state: present
+  - name: Install wget
+    apt:
+      name: wget
+      state: present
+  - name: install nmap
+    apt:
+      name: nmap
+      state: present  
