@@ -22,5 +22,5 @@
   - name: install tree
     yum:
       name: tree
-      state:present
+      state: present
     when: ansible_os_family =="Redhat"
