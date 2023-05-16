@@ -17,4 +17,5 @@
   - name: install nmap
     apt:
       name: nmap
-      state: present  
+      state: present \
+    when: ansible_os_family =="Debian" 
