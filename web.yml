@@ -1,0 +1,31 @@
+---
+- hosts: [mywebservers]
+  become: yes
+  tasks:
+  - name: I want to install tree
+    apt:
+      name: tree
+      state: present
+  - name: I want to install apache2
+    apt:
+      name: "{{mywebpackubuntu}}"
+      state: present
+  - name: Install wget
+    apt:
+      name: wget
+      state: present
+  - name: install nmap
+    apt:
+      name: nmap
+      state: present 
+    when: ansible_os_family =="Debian" 
+  - name: install httpd
+    yum:
+      name:"{{mywebserveronredhat}}"
+      state: present
+    when: ansible_os_family =="RedHat"
+  - name: start httpd
+    service:
+       name: "{{mywebserveronredhat}}"
+       state: started
+    when: ansible_os_family=="RedHat"
