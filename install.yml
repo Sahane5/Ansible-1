@@ -19,8 +19,8 @@
       name: nmap
       state: present 
     when: ansible_os_family =="Debian" 
-  - name: install tree
+  - name: install httpd
     yum:
-      name: tree
+      name: httpd
       state: present
     when: ansible_os_family =="RedHat"
