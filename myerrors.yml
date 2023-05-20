@@ -1,0 +1,19 @@
+---
+- host: 172.31.25.104
+  become: yes
+  tasks:
+  - name: install git
+    apt:
+      name: git
+      state: present
+    
+  - name: install wget
+    apt: 
+      name: wget
+      stateee: present
+      ignore_errors: yes    # this is intended when you want to skip the errored tasks bc ansible is like interpreter
+    
+  - name: install tree
+    apt:
+      name: tree
+      state: present

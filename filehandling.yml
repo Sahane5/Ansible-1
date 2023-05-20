@@ -1,0 +1,8 @@
+--- 
+- hosts: 172.31.25.104
+  become: yes
+  tasks:
+  - name: create a file 
+    file:
+      path: /home/ahmed/file_one
+      state: touch

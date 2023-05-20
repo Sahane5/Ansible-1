@@ -1,0 +1,14 @@
+---
+- hosts: 172.31.25.104
+  become: yes
+  tasks:
+  - include_tasks: filehandling.yml
+  - name: create a folder
+    file:
+      path: /home/ahmed/new_folder
+      state: directory
+
+  - name: copy file from master to node server
+    copy:
+      src: myfile.txt
+      dest: /home/ubuntu
