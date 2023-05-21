@@ -12,3 +12,15 @@
     copy:
       src: myfile.txt
       dest: /home/ubuntu
+  - name: copy dynamic files
+    template:
+        src: myindex.j2
+        dest: /var/www/html/index.html
+    notify: restart my web server
+  
+    handlers:
+
+  - name: web server restarted
+    service: 
+      name: apache2
+      state: restarted
