@@ -1,5 +1,5 @@
 ---
-- hosts: [mywebservers]
+- hosts: myhosts
   become: yes
   tasks:
   - name: I want to install tree
